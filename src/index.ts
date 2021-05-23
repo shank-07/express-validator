@@ -30,20 +30,7 @@ if (validationErrors.length === 0) {
     console.log("No Validation Errors");
 }
 
-// new validation Schema 
 
-const options = { 
-    required : true,
-    length : 10,
-    allowedCharacter : [ "@" , "$", "-", "_" ]
-}
-
-const version2ValidationSchema = {
-    otp : {
-        type : "number",
-        length : 6, 
-    }
-}
 
 
 
