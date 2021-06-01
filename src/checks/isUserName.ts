@@ -2,11 +2,10 @@
 //  TO CHECK IF FEILD IS STRING 
 export function isUserName(value: any, field: any) {
 
-    if (value === undefined || value === null || value === " " || value.trim() === "") {
-        return { error: `${field} is missing`, feild: `${field}` };
-    }
-    else if (typeof value != 'string') {
-        return { error: `${field} is not a string`, feild: `${field}` };
+    const userNameRegex = /^[a-zA-Z0-9@_.&#]$/s;
+
+    if (!userNameRegex.test(value)) {
+        return { error: `${field} is not valid, it must contain smallcase, capital case , number , @ , _ , . , & , # , `, feild: `${field}` };
     }
 
     return null;

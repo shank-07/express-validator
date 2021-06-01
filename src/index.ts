@@ -3,11 +3,10 @@ import { validator } from "./method/validator";
 
 // request body
 const reponseBody = {
-
     name: "Jogn Doe",
     phoneNumber: 1234567890,
-    email: "example@gmail.com"
-
+    email: "example@gmail.com",
+    otp : 123456,
 };
 
 // validation Schema
@@ -15,6 +14,10 @@ const validationSchema = {
     name: "string",
     email: "email",
     phoneNumber: "number",
+    otp : {
+        type : "number",
+        length : 5, 
+    }
 };
 
 
@@ -32,18 +35,13 @@ if (validationErrors.length === 0) {
 
 // new validation Schema 
 
-const options = { 
-    required : true,
-    length : 10,
-    allowedCharacter : [ "@" , "$", "-", "_" ]
-}
+// const options = { 
+//     required : true,
+//     length : 10,
+//     allowedCharacter : [ "@" , "$", "-", "_" ]
+// }
 
-const version2ValidationSchema = {
-    otp : {
-        type : "number",
-        length : 6, 
-    }
-}
+
 
 
 
